@@ -2,9 +2,10 @@
 window.jQuery = window.$ = require('jquery');
 
 const $ = window.$;
+const home = require('./home.js');
 
 require('bootstrap');
 
-$(() => {
-    console.log('document ready');
-});
+window.movements = {};
+window.movements.initHome = home.init;
+

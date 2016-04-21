@@ -75,3 +75,11 @@
         </div>
     </section>
 {% endblock %}
+
+{% block extra_scripts %}
+<script type="application/javascript">
+ $(() => {
+    window.movements.initHome();
+ });
+</script>
+{% endblock %}
