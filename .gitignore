@@ -3,6 +3,7 @@ node_modules/
 _build/
 dev.db
 site_media/
+dist/
 
 # PyCharm project files
 .idea
