@@ -1,4 +1,4 @@
-# {{ project_name }}
+# Movements React UI
 
 ## Getting Started
 
