@@ -1,7 +1,6 @@
-{% extends "theme_bootstrap/base.html" %}
+{% extends "base.html" %}
 
 {% load staticfiles %}
-{% load pinax_webanalytics_tags %}
 {% load i18n %}
 
 
@@ -26,6 +25,5 @@
 {% endblock %}
 
 {% block extra_body_base %}
-    {% analytics %}
     {% block extra_body %}{% endblock %}
 {% endblock %}
