@@ -1,8 +1,7 @@
 {% load i18n %}
 {% load account_tags %}
 
-
-<ul class="nav navbar-nav pull-right">
+<div class="navbar-right">
     {% if request.user.is_authenticated %}
         <p class="navbar-text">
             <i class="fa fa-user"></i> {% user_display request.user %}
@@ -14,12 +13,14 @@
             <a id="account_logout" href="{% url 'account_logout' %}"><i class="fa fa-power-off"></i> {% trans "Log out" %}</a>
         </li>
     {% else %}
-        <li><a href="{% url 'account_login' %}">{% trans "Log in" %}</a></li>
+        
+        <a type="button" class="btn btn-default btn-sm navbar-btn mo-button" href="{% url 'account_login' %}">{% trans "Log in" %}</a>
         {% if ACCOUNT_OPEN_SIGNUP %}
-            <li><a href="{% url 'account_signup' %}">{% trans "Sign up" %}</a></li>
+            
+            <a type="button" class="btn btn-primary btn-sm navbar-btn mo-button" href="{% url 'account_signup' %}">{% trans "Sign up" %}</a>
         {% endif %}
     {% endif %}
-</ul>
+</div>
 
 <form id="accountLogOutForm" style="display: none;" action="{% url 'account_logout' %}" method="POST">
     {% csrf_token %}

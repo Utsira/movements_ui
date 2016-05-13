@@ -9,16 +9,16 @@
 {% block body_base %}
     <section class="jumbotron">
         <div class="container">
-            {% include "_messages.html" %}
-            <h1>{% blocktrans %}Welcome to<br>pinax-project-account{% endblocktrans %}</h1>
-            <p>
-                {% blocktrans %}
-                In addition to what is provided by the "zero" project, this project
-                provides thorough integration with django-user-accounts, adding
-                comprehensive account management functionality. It is a foundation
-                suitable for most sites that have user accounts.
-                {% endblocktrans %}
-            </p>
+            <div class="page-header">
+                {% include "_messages.html" %}
+                <h2 class="text-center">{% blocktrans %}Crowdsourcing Human Rights{% endblocktrans %}<br>
+                <small>
+                    {% blocktrans %}
+                    Request help from across the globe, offer help to an activist in need
+                    {% endblocktrans %}
+                    </small>
+                </h2>
+            </div>
         </div>
     </section>
     <section>

@@ -20,29 +20,39 @@
         {% block extra_head_base %}
             {% block extra_head %}{% endblock %}
         {% endblock %}
+
+        </style>
     </head>
     <body class="{% block body_class %}{% endblock %}" id="{% block body_id %}{% endblock %}" {% block body_extra_attributes %}{% endblock %}>
         <div class="{% block wrapper_class %}{% endblock %}">
             {% block topbar_base %}
                 <header>
                     <div class="navbar navbar-default {% block navbar_class %}navbar-fixed-top{% endblock %}">
-                        <div class="container">
-                        {% block topbar %}
-                            <div class="navbar-header">
-                                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                    <span class="fa fa-bars"></span>
-                                </button>
-                                {% block site_brand %}<a class="navbar-brand" href="{% url "home" %}">{{ SITE_NAME }}</a>{% endblock %}
+                        <div class="container-fluid">
+                            
+                            <ul class="nav navbar-nav">
+       
+                                <li class="dropdown">
+                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <span class="fa fa-bars fa-lg"></span>
+                                </a>
+                                  <ul class="dropdown-menu">
+                                    <li><a href="#">About Movements</a></li>
+                                    <li><a href="#">Resources</a></li>
+                                    <li><a href="#">Our Terms</a></li>
+                                    <!-- <li role="separator" class="divider"></li> -->
+                                    <li><a href="#">Unblock the Web (Internet Safety)</a></li>
+                                    <li><a href="#">View Requests & Offers</a></li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            {% block topbar %}
+                            
+                            {% block site_brand %}<a class="navbar-brand" href="{% url "home" %}">MOVEMENTS</a>{% endblock %}
+
+                            {% block account_bar %}{% include "_account_bar.html" %}{% endblock %} 
                             </div>
-                            <div class="collapse navbar-collapse navbar-responsive-collapse">
-                                {% block nav %}
-                                      <ul class="nav navbar-nav">
-                                          <li><a href="#tab_one">One</a></li>
-                                          <li><a href="#tab_two">Two</a></li>
-                                      </ul>
-                                {% endblock %}
-                                {% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
-                            </div>
+
                         {% endblock %}
                         </div>
                     </div>
@@ -70,6 +80,8 @@
         </div>
 
         {% block scripts %}{% endblock %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
         {% block theme_script %}
             <script src="{% static "pinax/js/theme.js" %}"></script>
